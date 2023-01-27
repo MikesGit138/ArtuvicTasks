@@ -1,8 +1,14 @@
 <div class="card-ctn">
-    <div class="card-el">
-        <div>9:00</div>
-        <div>Work Out</div>
-        <button>Completed</button>
-        <button>Delete</button>
+    <div class="card-el" *ngFor="let task of taskList">
+        <div>
+            <p>{{task.time}}</p>
+        </div>
+        <div>
+            <p>{{task.taskTitle}}</p>
+        </div>
+        <div class="worker-btn">
+            <button class="comp-btn">Completed</button>
+            <button class="del-btn">Delete</button>
+        </div>
     </div>
 </div>
