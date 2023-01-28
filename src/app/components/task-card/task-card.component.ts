@@ -10,6 +10,7 @@ export class TaskCardComponent implements OnInit {
 
   
   constructor() { }
+  
   taskList = taskList;
   
   
