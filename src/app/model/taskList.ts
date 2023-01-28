@@ -10,6 +10,6 @@ export let taskList = [{
 },
 {
   time: '1:00pm',
-    taskTitle: 'Work on project 2 fjadslfjlk fjkladsj fklaj eklf jakejwafkl ajeaklwrjfvk e',
+    taskTitle: 'read wah gwan fi swat and ting',
     completed: true
 }]
