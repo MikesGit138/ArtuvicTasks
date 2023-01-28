@@ -1,9 +1,20 @@
 header{
     color: purple;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 p.title{
     font-size: 1.8em;
-    text-align: center;
-    background-color: white;
-    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,-100%);
+   
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 2px;
+   
 }

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  open = true;
+  receiveMsg($event:boolean){
+    this.open = $event;
+  }
+
   title = 'artuvic-tasks';
 }
