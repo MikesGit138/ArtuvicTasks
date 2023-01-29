@@ -1,7 +1,9 @@
 <header>
     <app-header (event)="receiveMsg($event)"></app-header>
 </header>
+<div [ngClass]="{'open-card': open}">
 <div class="card-ctn">
     <app-task-card></app-task-card>
+</div>
 </div>
 <app-create-task *ngIf="open"></app-create-task>
