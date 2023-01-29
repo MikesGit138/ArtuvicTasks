@@ -12,6 +12,10 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
 //material modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule, } from '@angular/material/core';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import {MatCardModule} from '@angular/material/card';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
