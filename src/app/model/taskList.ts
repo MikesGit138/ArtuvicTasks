@@ -1,4 +1,4 @@
-export let taskList = [{
+export let taskList= [{
     time: '9:00',
     taskTitle: 'Go to the gym',
     completed: true
@@ -11,5 +11,5 @@ export let taskList = [{
 {
   time: '1:00pm',
     taskTitle: 'read wah gwan fi swat and ting',
-    completed: true
+    completed: false
 }]

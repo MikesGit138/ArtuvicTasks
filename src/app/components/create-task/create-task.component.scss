@@ -8,6 +8,9 @@ mat-card{
     form{
         display: flex;
         flex-direction: column;
+        mat-form-field{
+            padding : 20px;
+        }
         .form-head{
             text-align: center;
             color: purple;
