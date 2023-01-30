@@ -5,11 +5,12 @@ import { Task } from '../model/taskClass';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
-
+export class localStorageService {
+  taskList = taskList;
+  // newTaskList = []
   constructor() { }
   public saveTask(task: Task){
     localStorage.setItem('taskList', JSON.stringify(task))
-
+    // this.taskList.push(task);
   }
 }

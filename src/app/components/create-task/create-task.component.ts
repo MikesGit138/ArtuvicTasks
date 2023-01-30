@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { localStorageService } from 'src/app/service/localStorage.service';
+import { taskList } from 'src/app/model/taskList';
+import { Task } from 'src/app/model/taskClass';
 
 @Component({
   selector: 'app-create-task',
@@ -18,6 +20,7 @@ export class CreateTaskComponent implements OnInit {
   onAddTask(){
     console.log('the time of task is ',this.timeOfTask)
     console.log('the title of task is ',this.titleOfTask)
+
   }
 
   goToTasks(){
