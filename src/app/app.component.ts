@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   open = true;
+  close = false;
+
   receiveMsg($event:boolean){
     this.open = $event;
+  }
+
+  anotherEvent($event:boolean){
+    this.open = $event;
+
   }
 
   title = 'artuvic-tasks';

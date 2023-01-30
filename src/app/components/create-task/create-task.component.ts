@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { localStorageService } from 'src/app/service/localStorage.service';
 
 @Component({
   selector: 'app-create-task',
@@ -9,15 +10,21 @@ export class CreateTaskComponent implements OnInit {
   timeOfTask = '';
   titleOfTask = '';
   taskCompleted = false;
+  backToTask = false;
+  @Output() event = new EventEmitter(); 
 
-  constructor() { }
+  constructor(public lstore: localStorageService) { }
+
   onAddTask(){
     console.log('the time of task is ',this.timeOfTask)
     console.log('the title of task is ',this.titleOfTask)
   }
-  isDisabled(a: String){
-    return a = '';
+
+  goToTasks(){
+    this.backToTask = !this.backToTask;
+    this.event.emit(this.backToTask);
   }
+  
   ngOnInit(): void {
 
   }
