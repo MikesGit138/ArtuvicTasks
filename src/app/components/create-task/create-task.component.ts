@@ -15,6 +15,9 @@ export class CreateTaskComponent implements OnInit {
     console.log('the time of task is ',this.timeOfTask)
     console.log('the title of task is ',this.titleOfTask)
   }
+  isDisabled(a: String){
+    return a = '';
+  }
   ngOnInit(): void {
 
   }
