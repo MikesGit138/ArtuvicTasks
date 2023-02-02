@@ -9,7 +9,7 @@ export let taskList= [{
     completed: true
 },
 {
-  time: '1:00pm',
+  time: '1:00',
     taskTitle: 'read wah gwan fi swat and ting',
     completed: false
 }]

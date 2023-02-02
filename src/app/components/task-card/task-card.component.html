@@ -1,13 +1,13 @@
 <div class="card-ctn">
     <div class="card-el" *ngFor="let task of taskList">
         <div>
-            <p [ngStyle]="{'text-decoration' : task.completed ? 'none' : 'line-through'}">{{task.time}}</p>
+            <p [ngStyle]="{'text-decoration' : task.completed ? 'line-through' : 'none'}">{{task.time}}</p>
         </div>
         <div>
-            <p [ngStyle]="{'text-decoration' : task.completed ? 'none' : 'line-through'}">{{task.taskTitle}}</p>
+            <p [ngStyle]="{'text-decoration' : task.completed ? 'line-through' : 'none'}">{{task.taskTitle}}</p>
         </div>
         <div class="worker-btn">
-            <button class="comp-btn">Completed</button>
+            <button [ngClass]="task.completed ? 'f-comp-btn' : 't-comp-btn'">Completed</button>
             <button class="del-btn">Delete</button>
         </div>
     </div>
