@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Task } from 'src/app/model/taskClass';
 import { taskList } from 'src/app/model/taskList';
 
 @Component({
@@ -10,18 +11,19 @@ export class TaskCardComponent implements OnInit {
 
   // @Input() time = '';
   // @Input() title = '';
-  // private completed = false;
+  // @Input() completed = false;
   taskList = taskList;
-  mainTasks = [];
 
   constructor() { }
-  
- 
-  addToTaskList(){
-    // taskList.push(this.time)
 
+  complete(task:Task){
+    task.completed = !task.completed;
   }
-  
+  deleteTask(task: any){
+       const index = taskList.indexOf(task.taskTitle);
+       console.log(task.taskTitle);
+       this.taskList.splice(index,1)
+  }
   
   ngOnInit(): void {
   }

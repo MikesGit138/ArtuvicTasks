@@ -1,5 +1,5 @@
 <div class="card-ctn">
-    <div class="card-el" *ngFor="let task of taskList">
+    <div class="card-el" *ngFor="let task of taskList; let i = index">
         <div>
             <p [ngStyle]="{'text-decoration' : task.completed ? 'line-through' : 'none'}">{{task.time}}</p>
         </div>
@@ -7,8 +7,10 @@
             <p [ngStyle]="{'text-decoration' : task.completed ? 'line-through' : 'none'}">{{task.taskTitle}}</p>
         </div>
         <div class="worker-btn">
-            <button [ngClass]="task.completed ? 'f-comp-btn' : 't-comp-btn'">Completed</button>
-            <button class="del-btn">Delete</button>
+            <button 
+            [ngClass]="task.completed ? 'f-comp-btn' : 't-comp-btn'"
+            (click)="complete(task)">Completed</button>
+            <button class="del-btn" (click)="deleteTask(task)">Delete</button>
         </div>
     </div>
 </div>
