@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { taskList } from 'src/app/model/taskList';
 
 @Component({
@@ -8,10 +8,19 @@ import { taskList } from 'src/app/model/taskList';
 })
 export class TaskCardComponent implements OnInit {
 
-  
+  // @Input() time = '';
+  // @Input() title = '';
+  // private completed = false;
+  taskList = taskList;
+  mainTasks = [];
+
   constructor() { }
   
-  taskList = taskList;
+ 
+  addToTaskList(){
+    // taskList.push(this.time)
+
+  }
   
   
   ngOnInit(): void {

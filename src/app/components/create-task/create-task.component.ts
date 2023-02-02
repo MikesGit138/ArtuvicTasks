@@ -9,10 +9,11 @@ import { Task } from 'src/app/model/taskClass';
   styleUrls: ['./create-task.component.scss']
 })
 export class CreateTaskComponent implements OnInit {
-  timeOfTask = '';
-  titleOfTask = '';
-  taskCompleted = false;
-  backToTask = false;
+  public timeOfTask = '';
+  public titleOfTask = '';
+  public taskCompleted = false;
+  private backToTask = false;
+  public taskList = taskList;
   @Output() event = new EventEmitter(); 
 
   constructor(public lstore: localStorageService) { }
@@ -20,6 +21,7 @@ export class CreateTaskComponent implements OnInit {
   onAddTask(){
     console.log('the time of task is ',this.timeOfTask)
     console.log('the title of task is ',this.titleOfTask)
+    this.taskList.push({time: this.timeOfTask, taskTitle: this.titleOfTask, completed: this.taskCompleted})
 
   }
 

@@ -9,7 +9,8 @@ export class localStorageService {
   taskList = taskList;
   // newTaskList = []
   constructor() { }
-  public saveTask(task: Task){
+  public saveTask(task: object){
+    // this.taskList.push(task);
     localStorage.setItem('taskList', JSON.stringify(task))
     // this.taskList.push(task);
   }
