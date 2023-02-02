@@ -13,16 +13,24 @@ export class TaskCardComponent implements OnInit {
   // @Input() title = '';
   // @Input() completed = false;
   taskList = taskList;
+  del = false;
 
   constructor() { }
 
   complete(task:Task){
     task.completed = !task.completed;
   }
+  // delFunc(){
+  //   this.del = !this.del
+  // }
   deleteTask(task: any){
-       const index = taskList.indexOf(task.taskTitle);
+      const index = taskList.indexOf(task);
+     // const index = taskList.findIndex((el) => el)
        console.log(task.taskTitle);
+       console.log(taskList.indexOf(task))
        this.taskList.splice(index,1)
+      // this.del == !this.del;
+      // this.taskList.filter(this.delFunc, taskList)
   }
   
   ngOnInit(): void {
