@@ -5,16 +5,18 @@ header{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 30px;
+    p.title{
+        font-size: 1.8em;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%,-100%);
+       
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 2px;
+       
+    }
 }
-p.title{
-    font-size: 1.8em;
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%,-100%);
-   
-    font-size: 50px;
-    font-weight: bold;
-    letter-spacing: 2px;
-   
-}
+
