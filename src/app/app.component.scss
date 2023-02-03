@@ -3,5 +3,7 @@ div.card-ctn{
     width: 70vw;
 }
 .open-card{
-    display: none;
+    // display: none;
+    opacity: 10;
+    filter: brightness(0%)
 }

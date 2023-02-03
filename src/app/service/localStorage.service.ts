@@ -6,12 +6,16 @@ import { Task } from '../model/taskClass';
   providedIn: 'root'
 })
 export class localStorageService {
-  taskList = taskList;
+  public taskList = taskList;
   // newTaskList = []
   constructor() { }
   public saveTask(task: object){
     // this.taskList.push(task);
-    localStorage.setItem('taskList', JSON.stringify(task))
+    localStorage.setItem('taskList', JSON.stringify(taskList))
     // this.taskList.push(task);
+  }
+  public compTask(a:boolean, task: Task){
+    localStorage.setItem('taskList', JSON.stringify(task.completed))
+    a = !a;
   }
 }

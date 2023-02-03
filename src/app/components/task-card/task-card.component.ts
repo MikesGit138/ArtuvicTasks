@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Task } from 'src/app/model/taskClass';
 import { taskList } from 'src/app/model/taskList';
+import { localStorageService } from 'src/app/service/localStorage.service';
 
 @Component({
   selector: 'app-task-card',
@@ -9,13 +10,10 @@ import { taskList } from 'src/app/model/taskList';
 })
 export class TaskCardComponent implements OnInit {
 
-  // @Input() time = '';
-  // @Input() title = '';
-  // @Input() completed = false;
-  taskList = taskList;
-  del = false;
+  
+  public taskList = taskList;
 
-  constructor() { }
+  constructor(public lstore: localStorageService) { }
 
   complete(task:Task){
     task.completed = !task.completed;

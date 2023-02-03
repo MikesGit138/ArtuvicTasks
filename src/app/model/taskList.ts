@@ -8,8 +8,8 @@ export let taskList= [{
     taskTitle: 'Work on project',
     completed: true
 },
-{
-  time: '1:00',
-    taskTitle: 'read wah gwan fi swat and ting',
-    completed: false
-}]
+ {   time: '1:00',
+     taskTitle: 'Complete Project',
+     completed: false
+ },
+]

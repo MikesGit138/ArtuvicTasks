@@ -22,6 +22,7 @@ export class CreateTaskComponent implements OnInit {
     console.log('the time of task is ',this.timeOfTask)
     console.log('the title of task is ',this.titleOfTask)
     this.taskList.push({time: this.timeOfTask, taskTitle: this.titleOfTask, completed: this.taskCompleted})
+    this.lstore.saveTask({time: this.timeOfTask, taskTitle: this.titleOfTask, completed: this.taskCompleted})
     this.goToTasks()
   }
 

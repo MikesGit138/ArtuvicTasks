@@ -6,4 +6,4 @@
     <app-task-card></app-task-card>
 </div>
 </div>
-<app-create-task *ngIf="open || close" (event)="anotherEvent($event)"></app-create-task>
+<app-create-task *ngIf="open" (event)="anotherEvent($event)"></app-create-task>
