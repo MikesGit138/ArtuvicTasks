@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { taskList } from './model/taskList';
 
 @Component({
@@ -7,9 +7,9 @@ import { taskList } from './model/taskList';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  open = false;
-  close = false;
-  taskList = taskList;
+  public open = false;
+  public close = false;
+  public taskList = taskList;
 
   receiveMsg($event:boolean){
     this.open = $event;
@@ -18,9 +18,6 @@ export class AppComponent {
     this.open = $event;
 
   }
-  clearTasks($event: any){
-    this.taskList = [];
-    console.log('smn')
-  }
+
   title = 'artuvic-tasks';
 }

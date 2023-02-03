@@ -6,7 +6,7 @@ import { taskList } from 'src/app/model/taskList';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
   public taskList = taskList;
   public open = false;
   @Output() public event = new EventEmitter();
@@ -23,9 +23,6 @@ export class HeaderComponent implements OnInit {
     this.taskList = [];
     console.log(this.taskList)
     this.clear.emit(this.taskList)
-  }
-
-  ngOnInit(): void {
   }
 
 }

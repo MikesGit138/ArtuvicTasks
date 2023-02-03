@@ -1,15 +1,15 @@
 export let taskList= [{
     time: '9:00',
-    taskTitle: 'Go to the gym',
+    taskTitle: 'Task 1',
     completed: true
   },
 {
     time: '12:00',
-    taskTitle: 'Work on project',
+    taskTitle: 'Task 2',
     completed: true
 },
- {   time: '1:00',
-     taskTitle: 'Complete Project',
+ {   time: '13:00',
+     taskTitle: 'Task 3',
      completed: false
  },
 ]

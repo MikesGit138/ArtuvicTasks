@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
-import { CleanBtnComponent } from './components/clean-btn/clean-btn.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 
 //material modules
@@ -26,7 +25,6 @@ import {MatButtonModule} from '@angular/material/button'
     HeaderComponent,
     TaskCardComponent,
     AddBtnComponent,
-    CleanBtnComponent,
     CreateTaskComponent,
   ],
   imports: [
