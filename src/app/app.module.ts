@@ -18,6 +18,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule, } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button'
 
+//http
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import {MatButtonModule} from '@angular/material/button'
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

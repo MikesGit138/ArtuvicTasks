@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Task } from 'src/app/model/taskClass';
 import { taskList } from 'src/app/model/taskList';
+import { ApiHandlingService } from 'src/app/services/api-handling.service';
+
 
 
 @Component({
@@ -9,7 +11,9 @@ import { taskList } from 'src/app/model/taskList';
   styleUrls: ['./task-card.component.scss']
 })
 export class TaskCardComponent {
-  public taskList = taskList;
+  public taskList:any;
+
+  constructor(private api: ApiHandlingService){}
 
   complete(task:Task){
     task.completed = !task.completed;
@@ -20,6 +24,14 @@ export class TaskCardComponent {
        console.log(task.taskTitle);
        console.log(taskList.indexOf(task))
        this.taskList.splice(index,1)
+  }
+
+  ngOnInit():void{
+    this.api.getTasks()
+    .subscribe({
+      next: res => this.taskList = res,
+      complete: () => console.log(taskList)
+    })
   }
 
 }
