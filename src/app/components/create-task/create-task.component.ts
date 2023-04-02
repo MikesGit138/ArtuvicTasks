@@ -20,9 +20,6 @@ export class CreateTaskComponent {
   constructor(private http: HttpClient, private api: ApiHandlingService){}
 
   onAddTask(){
-    // console.log('the time of task is ',this.timeOfTask)
-    // console.log('the title of task is ',this.titleOfTask)
-    // this.taskList.push({time: this.timeOfTask, taskTitle: this.titleOfTask, completed: this.taskCompleted})
     this.api.createTask({taskTitle: this.titleOfTask, completed: false})
     .subscribe({
       error: err => console.error(err)

@@ -9,16 +9,28 @@ import { Task } from '../model/taskClass';
 })
 export class ApiHandlingService {
   
-  private getTasksURI = environment.api_route + "/tasks"
-  private createTaskURI = environment.api_route + "/create-task";
+  private getTasksURL = environment.api_route + "/tasks"
+  private createTaskURL = environment.api_route + "/create-task";
+  private completeTaskURL = environment.api_route + "/complete-task/";
+  private deleteTaskURL = environment.api_route + "/del-task/";
 
   constructor(private http: HttpClient) { }
 
   public getTasks():Observable<Task[]>{
-    return this.http.get<Task[]>(this.getTasksURI);
+    return this.http.get<Task[]>(this.getTasksURL);
   }
 
   public createTask(task: Task){
-    return this.http.post<Task>(this.createTaskURI, task);
+    return this.http.post<Task>(this.createTaskURL, task);
   }
+
+  public completeTask(task: Task){
+    return this.http.put<Task>(this.completeTaskURL + task.id, task);
+  }
+
+  public deleteTask(task: Task){
+    return this.http.delete<Task>(this.deleteTaskURL + task.id);
+  }
+
+
 }

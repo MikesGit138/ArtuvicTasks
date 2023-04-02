@@ -16,14 +16,20 @@ export class TaskCardComponent {
   constructor(private api: ApiHandlingService){}
 
   complete(task:Task){
-    task.completed = !task.completed;
+    //task.completed = !task.completed;
+    this.api.completeTask(task).subscribe({
+      next: () => console.log("Task completed"),
+    });
+    location.reload();
   }
 
   deleteTask(task: any){
-      const index = taskList.indexOf(task);
-       console.log(task.taskTitle);
-       console.log(taskList.indexOf(task))
-       this.taskList?.splice(index,1)
+      // const index = taskList.indexOf(task);
+      // this.taskList?.splice(index,1)
+      this.api.deleteTask(task).subscribe({
+        next: () => console.log("Task deleted"),
+      });
+      location.reload();
   }
 
   ngOnInit():void{
