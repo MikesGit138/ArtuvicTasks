@@ -10,7 +10,7 @@
 
     .card-el{
         display: inline-grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-row-gap: 10em;
         align-items: center;
         color: white;
@@ -38,7 +38,6 @@
     .f-comp-btn{
         border-radius: 15px;
         background: rgb(0,0,0);
-        // background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(238,170,235,1) 0%, rgba(158,21,195,1) 35%);
         color: white;
         padding: 15px;
         font-weight: bold;
@@ -58,6 +57,18 @@
     cursor: pointer;
 
     }
+    .update-btn{
+        border-radius: 15px;
+        background-color: white;
+        color: purple;
+        padding: 15px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border: none;
+    cursor: pointer;
+    
+    }
+    
 }
     }
 }
