@@ -25,9 +25,9 @@ export class CreateTaskComponent {
     // this.taskList.push({time: this.timeOfTask, taskTitle: this.titleOfTask, completed: this.taskCompleted})
     this.api.createTask({taskTitle: this.titleOfTask, completed: false})
     .subscribe({
-      next: res => console.log(res),
       error: err => console.error(err)
     });
+    location.reload();
     this.goToTasks()
   }
 
