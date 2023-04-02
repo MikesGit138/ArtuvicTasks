@@ -11,7 +11,7 @@ import { ApiHandlingService } from 'src/app/services/api-handling.service';
   styleUrls: ['./task-card.component.scss']
 })
 export class TaskCardComponent {
-  public taskList:any;
+  public taskList?:Task[];
 
   constructor(private api: ApiHandlingService){}
 
@@ -23,14 +23,14 @@ export class TaskCardComponent {
       const index = taskList.indexOf(task);
        console.log(task.taskTitle);
        console.log(taskList.indexOf(task))
-       this.taskList.splice(index,1)
+       this.taskList?.splice(index,1)
   }
 
   ngOnInit():void{
     this.api.getTasks()
     .subscribe({
       next: res => this.taskList = res,
-      complete: () => console.log(taskList)
+      error: err => console.error(err)
     })
   }
 

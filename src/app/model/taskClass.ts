@@ -1,5 +1,5 @@
 export interface Task{
-    time?: string;
-    title?: string;
+    id?: number;
+    taskTitle?: string;
     completed?: boolean;
 }
