@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-content>
+    <form (submit)="onUpdateTask()">
+      <h2 class="form-head">Update Task</h2>
+      <mat-form-field appearance="outline">
+        <mat-label>Task</mat-label>
+        <textarea matNativeControl
+                  placeholder="Task to complete"
+                  [(ngModel)] = 'titleOfTask'
+                  [ngModelOptions]="{standalone: true}"></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="titleOfTask == ''"
+        (click)="goToTasks()"
+      >Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
