@@ -18,6 +18,5 @@
             (click)="openUpdateCard(task)">Update</button>
         </div>
     </div>
-  <app-update-task *ngIf="openUpdate" (event)="receiveMsg2($event)" [taskTitle]="taskTitle" [taskID]="taskID"></app-update-task>
-
 </div>
+<app-update-task *ngIf="openUpdate" (event)="receiveMsg2($event)" [taskTitle]="taskTitle" [taskID]="taskID"></app-update-task>

@@ -8,8 +8,7 @@ import { Component, Input} from '@angular/core';
 export class AppComponent {
   public open = false;
   public openUpdate = false;
-  public task!: Task;
-  @Input() taskTitle!: string;
+
   receiveMsg($event:boolean){
     this.open = $event;
     console.log("receiveMsg: " + $event)

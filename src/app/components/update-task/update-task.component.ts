@@ -12,22 +12,19 @@ export class UpdateTaskComponent {
   private backToTask = false;
   @Output() event = new EventEmitter();
   @Output() updateEvent:EventEmitter<Task> = new EventEmitter();
-  @Input() taskReceived!: Task;
   @Input() taskID?: number;
   @Input() taskTitle?: string;
   constructor(private http: HttpClient, private api: ApiHandlingService) {}
 
-  public titleOfTask?: string;
-  public task!: Task;
-
 
   onUpdateTask(){
-    console.log(this.taskID + "from update task compoent")
-    this.api.updateTask({id: this.taskID, taskTitle: this.titleOfTask})
+    console.log(this.taskID + "from update task component")
+    this.api.updateTask({id: this.taskID, taskTitle: this.taskTitle})
     .subscribe({
       error: err => console.error(err),
     });
-
+  this.goToTasks();
+  location.reload();
   }
 
   goToTasks(){

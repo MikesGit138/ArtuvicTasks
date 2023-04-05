@@ -21,20 +21,20 @@ export class TaskCardComponent {
   constructor(private api: ApiHandlingService){}
 
   complete(task:Task){
-    //task.completed = !task.completed;
     this.api.completeTask(task).subscribe({
-      next: () => console.log("Task completed"),
+      next: () => console.log("Task completed")
     });
-    location.reload();
+    //location.reload();
+   task.completed = !task.completed;
   }
 
   deleteTask(task: any){
-      // const index = taskList.indexOf(task);
-      // this.taskList?.splice(index,1)
       this.api.deleteTask(task).subscribe({
         next: () => console.log("Task deleted"),
       });
-      location.reload();
+      // location.reload();
+    const index = this.taskList!.indexOf(task);
+    this.taskList!.splice(index,1)
   }
 
   openUpdateCard(task: Task){
@@ -44,8 +44,6 @@ export class TaskCardComponent {
     this.taskToUpdate = task;
     this.taskID = task.id;
     this.taskTitle = task.taskTitle;
-    //this.updateEvent.emit(this.taskToUpdate);
-
     console.log(this.taskToUpdate)
   }
   receiveMsg2($event:boolean){

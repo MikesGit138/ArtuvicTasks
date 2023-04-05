@@ -11,7 +11,6 @@ import { Observable } from 'rxjs';
 export class CreateTaskComponent {
   public titleOfTask = '';
   private backToTask = false;
-  public taskList?:Task[];
   @Output() event = new EventEmitter();
 
   constructor(private http: HttpClient, private api: ApiHandlingService){}
