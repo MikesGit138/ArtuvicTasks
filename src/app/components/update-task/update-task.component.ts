@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Output, Input} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ApiHandlingService} from 'src/app/services/api-handling.service';
+import {Task} from "../../model/taskClass";
 
 @Component({
   selector: 'app-update-task',
@@ -8,21 +9,29 @@ import {ApiHandlingService} from 'src/app/services/api-handling.service';
   styleUrls: ['./update-task.component.scss']
 })
 export class UpdateTaskComponent {
-  public titleOfTask?: string;
   private backToTask = false;
   @Output() event = new EventEmitter();
-  
+  @Output() updateEvent:EventEmitter<Task> = new EventEmitter();
+  @Input() taskReceived!: Task;
+  @Input() taskID?: number;
+  @Input() taskTitle?: string;
   constructor(private http: HttpClient, private api: ApiHandlingService) {}
 
+  public titleOfTask?: string;
+  public task!: Task;
+
+
   onUpdateTask(){
-    this.api.updateTask({taskTitle: this.titleOfTask})
+    console.log(this.taskID + "from update task compoent")
+    this.api.updateTask({id: this.taskID, taskTitle: this.titleOfTask})
     .subscribe({
-      error: err => console.error(err)
+      error: err => console.error(err),
     });
+
   }
 
   goToTasks(){
-    this.backToTask = !this.backToTask;
+    this.backToTask = false;
     this.event.emit(this.backToTask);
   }
 }

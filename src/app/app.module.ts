@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button'
 
 //http
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateTaskComponent } from './components/update-task/update-task.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     TaskCardComponent,
     AddBtnComponent,
     CreateTaskComponent,
+    UpdateTaskComponent,
   ],
   imports: [
     BrowserModule,

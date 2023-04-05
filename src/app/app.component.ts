@@ -1,5 +1,4 @@
-import { Component} from '@angular/core';
-import { taskList } from './model/taskList';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +7,21 @@ import { taskList } from './model/taskList';
 })
 export class AppComponent {
   public open = false;
-  public close = false;
-  public taskList = taskList;
-
+  public openUpdate = false;
+  public task!: Task;
+  @Input() taskTitle!: string;
   receiveMsg($event:boolean){
     this.open = $event;
+    console.log("receiveMsg: " + $event)
   }
+  receiveMsg2($event:boolean){
+    this.openUpdate = $event;
+    console.log("receiveMsg2: " + $event)
+  }
+
   anotherEvent($event:boolean){
     this.open = $event;
-
+    console.log("anotherEvent: " + $event)
   }
 
   title = 'artuvic-tasks';

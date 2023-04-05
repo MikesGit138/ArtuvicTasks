@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { taskList } from 'src/app/model/taskList';
 import {HttpClient} from '@angular/common/http';
 import { ApiHandlingService } from 'src/app/services/api-handling.service';
 import { Observable } from 'rxjs';
@@ -10,12 +9,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./create-task.component.scss']
 })
 export class CreateTaskComponent {
-  public timeOfTask = '';
   public titleOfTask = '';
-  public taskCompleted = false;
   private backToTask = false;
-  public taskList = taskList;
-  @Output() event = new EventEmitter(); 
+  public taskList?:Task[];
+  @Output() event = new EventEmitter();
 
   constructor(private http: HttpClient, private api: ApiHandlingService){}
 
@@ -29,7 +26,7 @@ export class CreateTaskComponent {
   }
 
   goToTasks(){
-    this.backToTask = !this.backToTask;
+    this.backToTask = true;
     this.event.emit(this.backToTask);
   }
 

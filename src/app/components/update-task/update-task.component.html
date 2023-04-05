@@ -1,11 +1,12 @@
 <mat-card>
   <mat-card-content>
+    <button (click)="goToTasks()">X</button>
     <form (submit)="onUpdateTask()">
       <h2 class="form-head">Update Task</h2>
       <mat-form-field appearance="outline">
-        <mat-label>Task</mat-label>
+        <mat-label>{{taskTitle}}</mat-label>
         <textarea matNativeControl
-                  placeholder="Task to complete"
+                  placeholder="Task to Update"
                   [(ngModel)] = 'titleOfTask'
                   [ngModelOptions]="{standalone: true}"></textarea>
       </mat-form-field>
@@ -14,7 +15,7 @@
         color="primary"
         type="submit"
         [disabled]="titleOfTask == ''"
-        (click)="goToTasks()"
+
       >Submit</button>
     </form>
   </mat-card-content>
