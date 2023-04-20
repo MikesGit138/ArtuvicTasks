@@ -1,9 +1,10 @@
 <header>
     <app-header (event)="receiveMsg($event)"></app-header>
 </header>
-<div [ngClass]="{'open-card': open}">
-<div class="card-ctn">
-    <app-task-card (event)="receiveMsg2($event)"></app-task-card>
-</div>
-</div>
+<!--<div [ngClass]="{'open-card': open}">-->
+<!--&lt;!&ndash;<div class="card-ctn">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <app-task-card (event)="receiveMsg2($event)"></app-task-card>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
 <app-create-task *ngIf="open" (event)="anotherEvent($event)"></app-create-task>
+<router-outlet></router-outlet>

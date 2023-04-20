@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import {IsAuthenticatedGuard} from "./guards/is-authenticated.guard";
 
 //component modules
 import { AppComponent } from './app.component';
@@ -8,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { LoginComponent } from './components/login/login.component';
 
 //material modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +35,7 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
     AddBtnComponent,
     CreateTaskComponent,
     UpdateTaskComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,12 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
     MatOptionModule,
     MatSelectModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'task', component: TaskCardComponent, canActivate: [IsAuthenticatedGuard]},
+      {path: '', component: LoginComponent},
+      {path: 'login', component: LoginComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
