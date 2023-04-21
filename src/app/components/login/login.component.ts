@@ -19,12 +19,14 @@ export class LoginComponent implements OnInit {
       this.jwtService.login(this.username, this.password).subscribe({
         next: res => {
           if (res) {
-            this.decoded = this.jwtService.decodeToken()
-            console.log(this.decoded)
+            this.decoded = this.jwtService.decodeToken();
             if(this.decoded.sub === "user"){
               this.router.navigate(['/task'])
             }
-          }}})
+          }},
+      error: err => {
+        this.showLogErr = true;}
+      })
     }
 
 
