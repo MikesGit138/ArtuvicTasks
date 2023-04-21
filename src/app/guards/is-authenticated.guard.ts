@@ -14,7 +14,7 @@ export class IsAuthenticatedGuard implements CanActivate {
     return this.jwtService.isLoggedIn.pipe(
       tap(isLoggedIn => {
         if (!isLoggedIn){
-          this.router.navigate(['login']).then(r => "UNAUTHORIZED")
+          this.router.navigate(['login']).then(r => console.log("UNAUTHORIZED"))
         }
       })
     );

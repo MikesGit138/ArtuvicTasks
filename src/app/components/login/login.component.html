@@ -1,7 +1,8 @@
 <mat-card>
   <mat-card-content>
     <form (submit)="loginUser()">
-      <h2 class="form-head">Login</h2>
+      <h1  class="form-head">Login</h1>
+      <p *ngIf="showLogErr" class="errorMsg">Incorrect User Details</p>
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input type="text"
@@ -20,6 +21,7 @@
         mat-raised-button
         color="primary"
         type="submit"
+        [disabled]="!username || !password"
       >Submit</button>
     </form>
   </mat-card-content>
