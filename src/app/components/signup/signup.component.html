@@ -1,8 +1,7 @@
 <mat-card>
   <mat-card-content>
-    <form (submit)="loginUser()">
-      <h1  class="form-head">Login</h1>
-      <p *ngIf="showLogErr" class="errorMsg">Incorrect User Details</p>
+    <form (submit)="createUser()">
+      <h1  class="form-head">Sign Up</h1>
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input type="text"
@@ -16,14 +15,16 @@
                matInput
                [(ngModel)] = 'password'
                [ngModelOptions]="{standalone: true}"
-                autocomplete="on">
+               autocomplete="on">
       </mat-form-field>
       <button
         mat-raised-button
         color="primary"
         type="submit"
         [disabled]="!username || !password"
-      >Submit</button>
+      >Sign Up</button>
+      <br>
+      <button (click)="backToLogin()" mat-stroked-button color="primary">Back to Login</button>
     </form>
   </mat-card-content>
 </mat-card>
