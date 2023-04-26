@@ -22,6 +22,7 @@ export class JwtService {
         }));
   }
 
+
   public decodeToken(){
     return jwtDecode(localStorage.getItem('TOKEN')!);
   }

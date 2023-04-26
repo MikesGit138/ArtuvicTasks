@@ -9,9 +9,15 @@ import {User} from '../model/user';
 })
 export class AuthService {
   private loginURL = environment.api_route + "/login";
+  private createUserURL = environment.api_route + "/create-user";
   constructor(private http:HttpClient) { }
 
   public loginPost(user: User):Observable<User>{
     return this.http.post<User>(this.loginURL, user);
   }
+
+  public createUserPost(user: User):Observable<User>{
+    return this.http.post<User>(this.createUserURL, user);
+  }
+
 }
