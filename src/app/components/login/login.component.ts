@@ -20,13 +20,20 @@ export class LoginComponent implements OnInit {
         next: res => {
           if (res) {
             this.decoded = this.jwtService.decodeToken();
-            if(this.decoded.sub === "user"){
-              this.router.navigate(['/task'])
+              if(this.decoded.username === this.username){
+                this.router.navigate(['/task']);
             }
           }},
       error: err => {
-        this.showLogErr = true;}
-      })
+        if (err.status === 401) {
+          this.loginError = 'Invalid password';
+          this.showLogErr = true;
+        } else if (err.status === 404) {
+          this.loginError = "Inavlid username";
+          this.showLogErr = true;
+        }
+      }
+    });
     }
 
 
