@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
           if (res) {
             this.decoded = this.jwtService.decodeToken()
             console.log(this.decoded)
-            if(this.decoded.sub === "user"){
+            if(this.decoded.username === this.username){
               this.router.navigate(['/task'])
             }
           }}})
