@@ -22,9 +22,13 @@ export class LoginComponent implements OnInit {
             this.decoded = this.jwtService.decodeToken()
             console.log(this.decoded)
             if(this.decoded.username === this.username){
+            this.decoded = this.jwtService.decodeToken();
               this.router.navigate(['/task'])
             }
-          }}})
+          }},
+      error: err => {
+        this.showLogErr = true;}
+      })
     }
 
 

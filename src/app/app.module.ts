@@ -11,6 +11,8 @@ import { TaskCardComponent } from './components/task-card/task-card.component';
 import { AddBtnComponent } from './components/add-btn/add-btn.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutBtnComponent } from './components/logout-btn/logout-btn.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 //material modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +29,7 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +39,8 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
     CreateTaskComponent,
     UpdateTaskComponent,
     LoginComponent,
+    LogoutBtnComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,7 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
       { path: 'task', component: TaskCardComponent, canActivate: [IsAuthenticatedGuard]},
       {path: '', component: LoginComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'signup', component: SignupComponent},
     ])
   ],
   providers: [],
