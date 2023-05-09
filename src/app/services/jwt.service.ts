@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AuthService} from "./auth.service";
 import jwtDecode from "jwt-decode";
 import {tap, BehaviorSubject} from "rxjs";
+import { CookieService } from 'ngx-cookie';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class JwtService {
   isLoggedIn = this._isLoggedIn$.asObservable();
   constructor(private auth: AuthService) {
     this._isLoggedIn$.next(this.isTokenValid());
+
   }
 
   public login(username: string, password: string){
